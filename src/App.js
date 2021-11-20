@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      
         <p>
           Hola Mundo
         </p>
