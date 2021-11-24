@@ -3,6 +3,7 @@ import './NavBar.css'
 import logo from '../../assets/logo_coderhouse.png';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
+import CartWidget from '../CartWidget/CartWidget'
 
 export default function NavBar() {
 
@@ -17,7 +18,8 @@ export default function NavBar() {
                     <li><Button variant="outlined">Products</Button></li>
                     <li><Button variant="outlined">Contact</Button></li>
                     <li><Button variant="outlined">About</Button></li>
-                </ul>   
+                </ul>  
+                <CartWidget /> 
             </nav>
         </AppBar>
     )

@@ -1,16 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar/NavBar.js'
+import ListItems from './components/ListItems/ListItems'
 
 function App() {
-  //JSX
+
   return (
     <div className="App">
       <NavBar />
-        <p>
-          Hola Mundo
-        </p>
-        
+      <ListItems/>
     </div>
   );
 }
