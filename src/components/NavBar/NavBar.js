@@ -13,13 +13,15 @@ export default function NavBar() {
                 <div className="container-logo">
                     <img src={logo} alt="Logo ecommerce"/>
                 </div>
-                <ul>
-                    <li><Button variant="outlined">Home</Button></li>
-                    <li><Button variant="outlined">Products</Button></li>
-                    <li><Button variant="outlined">Contact</Button></li>
-                    <li><Button variant="outlined">About</Button></li>
-                </ul>  
-                <CartWidget /> 
+                <div className="container-navegation">
+                    <ul>
+                        <li><Button variant="outlined">Home</Button></li>
+                        <li><Button variant="outlined">Products</Button></li>
+                        <li><Button variant="outlined">Contact</Button></li>
+                        <li><Button variant="outlined">About</Button></li>
+                    </ul>  
+                    <CartWidget />
+                </div> 
             </nav>
         </AppBar>
     )
