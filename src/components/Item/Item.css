@@ -59,3 +59,10 @@ span.stock-text {
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 8%);
     opacity: 0.6;
 }
+
+.item-image {
+    height: 290px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}

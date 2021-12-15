@@ -1,0 +1,13 @@
+.product-item-container h2, .product-item-container p {
+    text-align: left;
+    width: 100%;
+}
+.product-item-container button {
+    width: 100%;
+}
+.container-img-detalle img{
+    width: 100%;
+}
+.item-count__buttons p {
+    text-align: center;
+}

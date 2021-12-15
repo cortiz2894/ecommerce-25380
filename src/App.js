@@ -1,13 +1,11 @@
 import './App.css';
-import NavBar from './components/NavBar/NavBar.js'
-import ListItems from './components/ListItems/ListItems'
+import AppRouter from './components/AppRouter/AppRouter';
 
 function App() {
 
   return (
     <div className="App">
-      <NavBar />
-      <ListItems />
+      <AppRouter />
     </div>
   );
 }
