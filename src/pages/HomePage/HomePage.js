@@ -8,7 +8,8 @@ export default function HomePage() {
 
     return (
     <div className={ `container-home ${theme ? 'theme-dark': 'theme-ligth'}  `}>
-        <ListItems /> 
+        <ListItems title="Productos destacados"/> 
+        <ListItems title="Ofetas de temporada"/> 
     </div>
     )
 }
