@@ -1,13 +1,17 @@
-import React, { useEffect, useState }from 'react'
+import React, { useEffect, useState, useContext }from 'react'
 import './NavBar.css'
 import logo from '../../assets/logo_coderhouse.png';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import CartWidget from '../CartWidget/CartWidget'
 import { Link } from 'react-router-dom'
+import SwitchTheme from '../SwitchTheme/SwitchTheme'
+import ThemeContext from '../../context/ThemeContext';
 
 export default function NavBar() {
     const [fixedNavBar, setFixedNavBar] = useState(false)
+    const { theme, changeTheme } = useContext(ThemeContext)
+
 
     useEffect(() => {
         function onScrollWindow() {
@@ -17,7 +21,6 @@ export default function NavBar() {
                 setFixedNavBar(false) 
             }
         }
-
         window.addEventListener("scroll", onScrollWindow)
         //unmounth
         return () => {
@@ -25,8 +28,10 @@ export default function NavBar() {
         }
     }, [])
 
+    console.log("theme desde NavBar: ", theme)
+
     return (
-        <AppBar position={fixedNavBar ? "fixed" : "static"}>
+        <AppBar position={fixedNavBar ? "fixed" : "static"} className={theme ? 'theme-dark' : 'theme-light'}>
             <nav>
                 <div className="container-logo">
                     <img src={logo} alt="Logo ecommerce" />
@@ -52,6 +57,7 @@ export default function NavBar() {
                             </Link>
                         </li>
                     </ul>
+                    <SwitchTheme changeTheme={changeTheme}/>
                     <CartWidget />
                 </div>
             </nav>

@@ -40,3 +40,8 @@ nav button {
     display: flex;
     align-items: center;
 }
+
+.container-navegation a {
+    text-decoration: none;
+    color: black;
+}

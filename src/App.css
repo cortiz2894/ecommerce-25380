@@ -45,3 +45,42 @@ p,span {
     transform: rotate(360deg);
   }
 }
+
+
+.theme-dark nav {
+  background-color: #282c34;
+}
+
+.theme-dark > nav button {
+  color: white !important;
+  border-color: white !important;
+}
+
+.theme-dark .cart-container > * {
+  fill: white !important;
+}
+
+.container-home{
+  float: left;
+  padding-bottom: 30px;
+  width: 100%;
+}
+.theme-dark.container-home .card-item-product {
+  background-color: white;
+}
+.theme-dark.container-home {
+  background-color: #282c34;
+  border-top: 1px solid white;
+}
+
+.container-home.theme-dark > h2 {
+  color:white;
+}
+
+.box-cart.active {
+  display: block;
+}
+
+.box-cart {
+  display: none;
+}
