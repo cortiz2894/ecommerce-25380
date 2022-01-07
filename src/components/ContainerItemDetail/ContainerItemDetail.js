@@ -2,59 +2,30 @@ import { useEffect, useState } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 import CircularProgress from '@mui/material/CircularProgress';
-
+//firebase
+import { doc, getDoc } from 'firebase/firestore';
+import db from '../../firebase'
 
 export default function ContainerItemDetail() {
     const [product, setProduct] = useState([])
     const [loader, setLoader] = useState(true)
     const { id } = useParams()
 
-    const dataProducts = [{
-        id: 1,
-        name: 'Remera 1',
-        price: 1400,
-        stock: 10,
-        img: 'remera1.jpg'
-    },
-    {
-        id: 2,
-        name: 'Remera 2',
-        price: 1500,
-        stock: 20,
-        img: 'remera2.jpeg',
-        description: "asdasdsadsad"
-    },
-    {
-        id: 3,
-        name: 'Remera 3',
-        price: 1700,
-        stock: 10,
-        img: 'remera3.jpg'
-    },
-    {
-        id: 4,
-        name: 'Remera 4',
-        price: 1200,
-        stock: 25,
-        img: 'remera4.jpg'
+    async function getProduct(db) {
+        const docRef = doc(db, "productos", id);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+            let producto = docSnap.data();
+            producto.id = docSnap.id
+            setProduct(producto)
+            setLoader(false)
+        } else {
+            console.log("No such document!");
+        }
     }
-    ]
-
-    const getProduct = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(dataProducts)
-        }, 1000)
-    })
 
     useEffect(() => {
-        getProduct.then(resultsProducts => {
-            resultsProducts.filter(resultProduct => {
-                if (resultProduct.id === parseInt(id)) {
-                    setProduct(resultProduct)
-                    setLoader(false)
-                }
-            })
-        })
+        getProduct(db)
     }, [id])
 
     return (

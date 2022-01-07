@@ -28,8 +28,6 @@ export default function NavBar() {
         }
     }, [])
 
-    console.log("theme desde NavBar: ", theme)
-
     return (
         <AppBar position={fixedNavBar ? "fixed" : "static"} className={theme ? 'theme-dark' : 'theme-light'}>
             <nav>
